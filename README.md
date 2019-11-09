@@ -21,3 +21,12 @@
 # EXPERIMENT 2
 
 * Expt 1 with Images as prior
+
+
+## Other details
+
+* Temporal study for immediate, post 2 minutes, post 5 minutes effect after prime given. Study trend as temporal delay is extended
+* Within group study followed
+* Two types of participants :
+  * Trial group : Subliminal prime presented
+  * Control group : ~15% participants where non-informative stimuli not presented
