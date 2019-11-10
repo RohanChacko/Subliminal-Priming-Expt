@@ -202,8 +202,13 @@ def render(category):
     screen.fill(WHITE)
     pygame.draw.circle(screen, BLACK, (WIDTH//2, HEIGHT//2), 15, 2)
     pygame.display.update()
-    time.sleep(FIXATION_DELAY)
+    time.sleep(int(sys.argv[2]))
 
+
+    screen.fill(WHITE)
+    pygame.draw.circle(screen, BLACK, (WIDTH//2, HEIGHT//2), 15)
+    pygame.display.update()
+    time.sleep(10)
 
     # Task frame
     screen.fill(WHITE)
