@@ -16,7 +16,7 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 ORANGE = (255, 215, 0)
 PURPLE = (128, 0, 128)
-YELLOW = (255, 255, 0)  
+YELLOW = (255, 255, 0)
 
 color = {
 'red' : RED,
@@ -217,7 +217,7 @@ def render(category):
     time.sleep(TASK_DELAY)
     pygame.draw.circle(screen, color[prime_color], (WIDTH//2 + 400, HEIGHT//2), 50)
     pygame.display.update()
-    print(task_color, 'printed first')
+    print(task_color, 'printed first on left')
 
 
 
