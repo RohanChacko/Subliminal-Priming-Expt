@@ -109,7 +109,7 @@ def render(category):
     screen.fill(WHITE)
     x = random.randrange(WIDTH//2 - 250, WIDTH//2 + 250)
     y = random.randrange(HEIGHT//2 - 250, HEIGHT // 2 + 250)
-    choice = random.randrange(0,1)
+    choice = random.randrange(0,2)
 
     if category == 'biscuits' :
         screen.blit(im_biscuits[choice], (x ,y))
