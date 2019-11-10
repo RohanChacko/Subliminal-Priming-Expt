@@ -16,6 +16,7 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 ORANGE = (255, 215, 0)
 PURPLE = (128, 0, 128)
+YELLOW = (255, 255, 0)  
 
 color = {
 'red' : RED,
@@ -24,6 +25,7 @@ color = {
 'orange' : ORANGE,
 'purple' : PURPLE,
 'black' : BLACK,
+'yellow' : YELLOW,
 }
 UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 LOWERCASE = "abcdefghijklmnopqrstuvwxyz"

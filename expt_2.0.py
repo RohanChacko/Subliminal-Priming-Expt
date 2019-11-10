@@ -15,13 +15,20 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 ORANGE = (255, 215, 0)
+PURPLE = (128,0,128)
+YELLOW = (255, 255, 0)
+PINK = (255,20,147)
+BROWN = (150,75,0)
 
 color = {
-'red' : RED,
-'blue' :BLUE,
-'green' : GREEN,
-'orange' : ORANGE,
 }
+
+pool_color_1 = [RED, ORANGE, YELLOW, GREEN]
+pool_color_1_label = ["RED", "ORANGE", "YELLOW", "GREEN"]
+
+pool_color_2 = [BROWN, PINK, BLUE, PURPLE]
+pool_color_2_label = ["BROWN", "PINK", "BLUE", "PURPLE"]
+
 UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 LOWERCASE = "abcdefghijklmnopqrstuvwxyz"
 LETTERS = list(UPPERCASE) + list(LOWERCASE)
@@ -41,40 +48,6 @@ clock = pygame.time.Clock()
 
 # Images and text init
 font = pygame.font.Font('freesansbold.ttf', 15)
-
-dir_biscuits = './Logos/biscuits'
-im_biscuits = []
-name_biscuits = []
-
-dir_chocobis = './Logos/choco_bis'
-im_chocobis = []
-name_chocobis = []
-
-dir_juice = './Logos/juice'
-im_juice = []
-name_juice = []
-
-for dirpath, _, filenames in os.walk(dir_biscuits):
-    for f in filenames:
-        path = os.path.abspath(os.path.join(dirpath, f))
-        temp = pygame.image.load(path)
-        im_biscuits.append(pygame.transform.scale(temp, (150,150)))
-        name_biscuits.append(path.split('/')[-1])
-
-for dirpath, _, filenames in os.walk(dir_chocobis):
-    for f in filenames:
-        path = os.path.abspath(os.path.join(dirpath, f))
-        temp = pygame.image.load(path)
-        im_chocobis.append(pygame.transform.scale(temp, (150,150)))
-        name_chocobis.append(path.split('/')[-1])
-
-for dirpath, _, filenames in os.walk(dir_juice):
-    for f in filenames:
-        path = os.path.abspath(os.path.join(dirpath, f))
-        temp = pygame.image.load(path)
-        im_juice.append(pygame.transform.scale(temp, (150,150)))
-        name_juice.append(path.split('/')[-1])
-
 
 def render_mask(screen) :
 
@@ -109,58 +82,18 @@ def render():
     screen.fill(WHITE)
     x = random.randrange(WIDTH//2 - 250, WIDTH//2 + 250)
     y = random.randrange(HEIGHT//2 - 250, HEIGHT // 2 + 250)
-    choice = random.randrange(0,2)
-    category = random.randrange(0,2)
-    # if category == 'biscuits' :
-    #     screen.blit(im_biscuits[choice], (x ,y))
-    #     prime_color = name_biscuits[choice].split('.')[0].split('_')[1]
-    #     task_color = name_biscuits[(choice+1)%2].split('.')[0].split('_')[1]
-    #     print("Primed with", name_biscuits[choice].split('.')[0])
+    choice = random.randrange(0,4)
+    category = random.randrange(0,4)
 
-    # elif category == 'chocobis' :
-    #     screen.blit(im_chocobis[choice], (x ,y))
-    #     prime_color = name_chocobis[choice].split('.')[0].split('_')[1]
-    #     task_color = name_chocobis[(choice+1)%2].split('.')[0].split('_')[1]
-    #     print("Primed with", name_chocobis[choice].split('.')[0])
-
-    # elif category == 'juice' :
-    #     screen.blit(im_juice[choice], (x ,y))
-    #     prime_color = name_juice[choice].split('.')[0].split('_')[1]
-    #     task_color = name_juice[(choice+1)%2].split('.')[0].split('_')[1]
-    #     print("Primed with", name_juice[choice].split('.')[0])
-
-    if category == 0:
-        if choice == 1:
-            color_disp = 'blue'
-            op_color = 'red'
-        else:
-            color_disp = 'red'
-            op_color = 'blue'
-
-        # screen.(color[color_disp], (x ,y))
-        pygame.draw.circle(screen, color[color_disp], (x, y),50)
-        prime_color = color_disp #color[color_disp].split('.')[0].split('_')[1]
-        task_color = op_color #color[op_color].split('.')[0].split('_')[1]
-        print("Primed with", color_disp)
-
-    elif category == 1 :
-        # choice = choice + 2
-        if choice == 1:
-            color_disp = 'orange'
-            op_color = 'green'
-        else:
-            color_disp = 'green'
-            op_color = 'orange'
-
-        # screen.blit(color[color_disp], (x ,y))
-        pygame.draw.circle(screen, color[color_disp], (x, y), 50)
-        prime_color = color_disp #color[color_disp].split('.')[0].split('_')[1]
-        task_color = op_color #color[op_color].split('.')[0].split('_')[1]
-        print("Primed with", color_disp)
-
-        
     
-    # pygame.draw.circle(screen, RED, (HEIGHT//2, WIDTH//2), 100, 5)
+    color_disp = pool_color_1[choice]
+    op_color = pool_color_2[category]
+
+    pygame.draw.circle(screen, color_disp, (x, y),50)
+    prime_color = pool_color_1_label[choice] 
+    task_color = pool_color_2_label[category]
+    print("Primed with", color_disp)
+
 
     render_mask(screen)
     pygame.display.update()
@@ -184,9 +117,9 @@ def render():
     # Task frame
     screen.fill(WHITE)
 
-    pygame.draw.circle(screen, color[task_color], (WIDTH//2 - 400, HEIGHT//2), 50)
+    pygame.draw.circle(screen, color_disp, (WIDTH//2 - 400, HEIGHT//2), 50)
     time.sleep(TASK_DELAY)
-    pygame.draw.circle(screen, color[prime_color], (WIDTH//2 + 400, HEIGHT//2), 50)
+    pygame.draw.circle(screen, op_color, (WIDTH//2 + 400, HEIGHT//2), 50)
     pygame.display.update()
     print(task_color, 'printed first')
 
