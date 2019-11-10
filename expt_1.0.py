@@ -20,7 +20,10 @@ pygame.mixer.init()  ## For sound
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Expt 1.0")
 clock = pygame.time.Clock()
+# display_surface = pygame.display.set_mode((X, Y ))
 
+
+images = [pygame.image.load('Logos/biscuits/dansk_blue.jpg'), pygame.image.load('Logos/biscuits/tiffany_blue.jpg')]
 
 def render() :
     '''
@@ -35,11 +38,11 @@ def render() :
     pygame.display.update()
 
     # pygame delay does not do what we want
-    pygame.time.delay(150)
+    # pygame.time.delay(150)
+    time.sleep(2.001)
     screen.fill(BLACK)
 
-
-
+    # display_surface.blit(images[0], (0, 0))
 
 
 def main() :
