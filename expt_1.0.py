@@ -15,12 +15,15 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 ORANGE = (255, 215, 0)
+PURPLE = (128, 0, 128)
 
 color = {
 'red' : RED,
 'blue' :BLUE,
 'green' : GREEN,
 'orange' : ORANGE,
+'purple' : PURPLE,
+'black' : BLACK,
 }
 UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 LOWERCASE = "abcdefghijklmnopqrstuvwxyz"
@@ -54,6 +57,18 @@ dir_juice = './Logos/juice'
 im_juice = []
 name_juice = []
 
+dir_mnm = './Logos/mnm'
+im_mnm = []
+name_mnm = []
+
+dir_skittles = './Logos/skittles'
+im_skittles = []
+name_skittles = []
+
+dir_pool = './Logos/pool'
+im_pool = []
+name_pool = []
+
 for dirpath, _, filenames in os.walk(dir_biscuits):
     for f in filenames:
         path = os.path.abspath(os.path.join(dirpath, f))
@@ -74,6 +89,27 @@ for dirpath, _, filenames in os.walk(dir_juice):
         temp = pygame.image.load(path)
         im_juice.append(pygame.transform.scale(temp, (150,150)))
         name_juice.append(path.split('/')[-1])
+
+for dirpath, _, filenames in os.walk(dir_skittles):
+    for f in filenames:
+        path = os.path.abspath(os.path.join(dirpath, f))
+        temp = pygame.image.load(path)
+        im_skittles.append(pygame.transform.scale(temp, (150,150)))
+        name_skittles.append(path.split('/')[-1])
+
+for dirpath, _, filenames in os.walk(dir_mnm):
+    for f in filenames:
+        path = os.path.abspath(os.path.join(dirpath, f))
+        temp = pygame.image.load(path)
+        im_mnm.append(pygame.transform.scale(temp, (150,150)))
+        name_mnm.append(path.split('/')[-1])
+
+for dirpath, _, filenames in os.walk(dir_pool):
+    for f in filenames:
+        path = os.path.abspath(os.path.join(dirpath, f))
+        temp = pygame.image.load(path)
+        im_pool.append(pygame.transform.scale(temp, (150,150)))
+        name_pool.append(path.split('/')[-1])
 
 
 def render_mask(screen) :
@@ -129,6 +165,23 @@ def render(category):
         task_color = name_juice[(choice+1)%2].split('.')[0].split('_')[1]
         print("Primed with", name_juice[choice].split('.')[0])
 
+    elif category == 'skittles' :
+        screen.blit(im_skittles[choice], (x ,y))
+        prime_color = name_skittles[choice].split('.')[0].split('_')[1]
+        task_color = name_skittles[(choice+1)%2].split('.')[0].split('_')[1]
+        print("Primed with", name_skittles[choice].split('.')[0])
+
+    elif category == 'pool' :
+        screen.blit(im_pool[choice], (x ,y))
+        prime_color = name_pool[choice].split('.')[0].split('_')[1]
+        task_color = name_pool[(choice+1)%2].split('.')[0].split('_')[1]
+        print("Primed with", name_pool[choice].split('.')[0])
+
+    elif category == 'mnm' :
+        screen.blit(im_mnm[choice], (x ,y))
+        prime_color = name_mnm[choice].split('.')[0].split('_')[1]
+        task_color = name_mnm[(choice+1)%2].split('.')[0].split('_')[1]
+        print("Primed with", name_mnm[choice].split('.')[0])
     # pygame.draw.circle(screen, RED, (HEIGHT//2, WIDTH//2), 100, 5)
 
     render_mask(screen)
