@@ -38,7 +38,7 @@ LETTERS = list(UPPERCASE) + list(LOWERCASE)
 # DELAY
 FIXATION_DELAY = 3
 MASK_DELAY = 0.5
-PRIME_DELAY = 0.005
+PRIME_DELAY = 0.055
 TASK_DELAY = 0.002
 
 dir_biscuits = './Logos/biscuits'
@@ -201,7 +201,8 @@ def render(screen, font, category, fix_delay):
     pygame.display.update()
     time.sleep(int(fix_delay))
 
-
+    pygame.mixer.music.load('./sound/ding.mp3')
+    pygame.mixer.music.play(0)
     screen.fill(WHITE)
     pygame.draw.circle(screen, BLACK, (WIDTH//2, HEIGHT//2), 15)
     pygame.display.update()
@@ -285,4 +286,9 @@ def main(category, fix_delay) :
 
 
 if __name__ == '__main__' :
-    _, _, _ = main()
+    keypress, primed_with, appeared_first, order = main(sys.argv[1], sys.argv[2])
+    append_string = "Experiment 2 :: Keypress: {} | Primed With: {} | Appeared First: {} | Order: {} | Time: {}\n".format(keypress, primed_with, appeared_first, order, sys.argv[2])
+    with open(sys.argv[3], "a+") as f:
+        f.write(append_string)
+        
+

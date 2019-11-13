@@ -7,7 +7,7 @@ import sys
 
 # def init() :
 
-WIDTH = 1000
+WIDTH = 1900
 HEIGHT = 1000
 FPS = 100
 
@@ -40,7 +40,7 @@ LETTERS = list(UPPERCASE) + list(LOWERCASE)
 # DELAY
 FIXATION_DELAY = 3
 MASK_DELAY = 0.5
-PRIME_DELAY = 0.005
+PRIME_DELAY = 0.050
 TASK_DELAY = 0.002
 
 def render_mask(screen, font) :
@@ -67,7 +67,7 @@ def render(screen, font, fix_delay):
     time.sleep(FIXATION_DELAY)
 
     # First mask
-    for i in range(5) :
+    for i in range(6) :
         screen.fill(WHITE)
         render_mask(screen, font)
         pygame.display.update()
@@ -96,7 +96,7 @@ def render(screen, font, fix_delay):
     time.sleep(PRIME_DELAY)
 
     # Second mask
-    for i in range(5) :
+    for i in range(6) :
         screen.fill(WHITE)
         render_mask(screen, font)
         pygame.display.update()
@@ -110,7 +110,8 @@ def render(screen, font, fix_delay):
     pygame.display.update()
     time.sleep(int(fix_delay))
 
-
+    pygame.mixer.music.load('./sound/ding.mp3')
+    pygame.mixer.music.play(0)
     screen.fill(WHITE)
     pygame.draw.circle(screen, BLACK, (WIDTH//2, HEIGHT//2), 15)
     pygame.display.update()
@@ -194,4 +195,8 @@ def main(fix_delay) :
 
 
 if __name__ == '__main__' :
-    _, _, _, _ = main()
+    keypress, primed_with, appeared_first, order = main(sys.argv[1])
+    append_string = "Experiment 1 :: Keypress: {} | Primed With: {} | Appeared First: {} | Order: {} | Time: {}\n".format(keypress, primed_with, appeared_first, order, sys.argv[1])
+    with open(sys.argv[2], "a+") as f:
+        f.write(append_string)
+    
