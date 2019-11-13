@@ -1,13 +1,34 @@
+from random import randrange
 import sys
 import os
-from random import randrange
+import expt1
+import expt2
 
-if sys.argv[1] == "0":
+
+fixation_delay = sys.argv[2]
+
+log = open('log.txt', 'w')
+
+name = input('Name of participant: ')
+sex = input('Gender (M/F): ').upper()
+
+# Experiment 1 => Color based
+# Experiment 2 => Brand based
+# Run this file as python experiment.py <<expt_no->[1/2]>> <<fixation_delay>>
+
+if sys.argv[1] == "1":
+
+    # clock = init()
+    keypress, primed_with, appeared_first, order = expt1.main(fixation_delay)
+
+
+elif sys.argv[1] == "2":
+
     categories = ['biscuits', 'choco_bis', 'juice', 'mnm', 'pool', 'skittles']
     idx = randrange(6)
     print(categories[idx])
-    os.system('python expt1.py {} {}'.format(categories[idx], sys.argv[2]))
-    pass
-else:
-    os.system('python expt2.py {}'.format(sys.argv[2]))
+
+    keypress, primed_with, appeared_first, order = expt2.main(categories[idx], fixation_delay)
+
+else :
     pass
