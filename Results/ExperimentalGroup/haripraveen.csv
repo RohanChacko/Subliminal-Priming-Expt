@@ -1,0 +1,4 @@
+Experiment Number,Keypress,Primed With,Appeared First,Order,Time
+2,Right (P),skittles_red,green,"{'left': 'green', 'right': 'red'}",10
+2,Right (P),skittles_green,red,"{'left': 'red', 'right': 'green'}",10
+2,Right (P),skittles_red,green,"{'left': 'green', 'right': 'red'}",10
