@@ -1,0 +1,4 @@
+Experiment Number,Keypress,Primed With,Appeared First,Order,Time
+1,Right (P),"(255, 215, 0)","(0, 0, 255)","{'right': (255, 215, 0), 'left': (0, 0, 255)}",0
+1,Left (Q),"(255, 215, 0)","(150, 75, 0)","{'right': (255, 215, 0), 'left': (150, 75, 0)}",0
+1,Left (Q),"(255, 255, 0)","(150, 75, 0)","{'left': (255, 255, 0), 'right': (150, 75, 0)}",0
