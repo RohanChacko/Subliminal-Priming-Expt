@@ -1,0 +1,4 @@
+Experiment Number,Keypress,Primed With,Appeared First,Order,Time
+2,Left (Q),mnm_blue,yellow,"{'right': 'blue', 'left': 'yellow'}",10
+2,Right (P),mnm_yellow,blue,"{'right': 'yellow', 'left': 'blue'}",10
+2,Left (Q),mnm_yellow,blue,"{'right': 'yellow', 'left': 'blue'}",10

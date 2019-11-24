@@ -1,0 +1,16 @@
+Experiment 1 :: Keypress:  | Primed With: (255, 0, 0) | Appeared First: (128, 0, 128) | Order: {'left': (255, 0, 0), 'right': (128, 0, 128)} | Time: 0
+Experiment 1 :: Keypress:  | Primed With: (255, 0, 0) | Appeared First: (128, 0, 128) | Order: {'left': (255, 0, 0), 'right': (128, 0, 128)} | Time: 0
+Experiment 1 :: Keypress: Right (P) | Primed With: (255, 215, 0) | Appeared First: (255, 20, 147) | Order: {'right': (255, 215, 0), 'left': (255, 20, 147)} | Time: 0
+Experiment 1 :: Keypress: Right (P) | Primed With: (255, 215, 0) | Appeared First: (255, 20, 147) | Order: {'right': (255, 215, 0), 'left': (255, 20, 147)} | Time: 0
+Experiment 1 :: Keypress: Left (Q) | Primed With: (0, 255, 0) | Appeared First: (128, 0, 128) | Order: {'right': (0, 255, 0), 'left': (128, 0, 128)} | Time: 0
+Experiment 1 :: Keypress: Left (Q) | Primed With: (0, 255, 0) | Appeared First: (128, 0, 128) | Order: {'right': (0, 255, 0), 'left': (128, 0, 128)} | Time: 0
+Experiment 1 :: Keypress: Left (Q) | Primed With: (0, 255, 0) | Appeared First: (128, 0, 128) | Order: {'left': (0, 255, 0), 'right': (128, 0, 128)} | Time: 0
+Experiment 1 :: Keypress: Left (Q) | Primed With: (0, 255, 0) | Appeared First: (128, 0, 128) | Order: {'left': (0, 255, 0), 'right': (128, 0, 128)} | Time: 0
+Experiment 1 :: Keypress: Left (Q) | Primed With: (0, 255, 0) | Appeared First: (255, 20, 147) | Order: {'right': (0, 255, 0), 'left': (255, 20, 147)} | Time: 0
+Experiment 1 :: Keypress: Left (Q) | Primed With: (0, 255, 0) | Appeared First: (255, 20, 147) | Order: {'right': (0, 255, 0), 'left': (255, 20, 147)} | Time: 0
+Experiment 1 :: Keypress: Left (Q) | Primed With: (255, 215, 0) | Appeared First: (128, 0, 128) | Order: {'left': (255, 215, 0), 'right': (128, 0, 128)} | Time: 120
+Experiment 1 :: Keypress: Left (Q) | Primed With: (255, 215, 0) | Appeared First: (128, 0, 128) | Order: {'left': (255, 215, 0), 'right': (128, 0, 128)} | Time: 120
+Experiment 1 :: Keypress: Right (P) | Primed With: (255, 255, 0) | Appeared First: (128, 0, 128) | Order: {'right': (255, 255, 0), 'left': (128, 0, 128)} | Time: 300
+Experiment 1 :: Keypress: Right (P) | Primed With: (255, 255, 0) | Appeared First: (128, 0, 128) | Order: {'right': (255, 255, 0), 'left': (128, 0, 128)} | Time: 300
+Experiment 1 :: Keypress: Left (Q) | Primed With: (255, 215, 0) | Appeared First: (0, 0, 255) | Order: {'right': (255, 215, 0), 'left': (0, 0, 255)} | Time: 300
+Experiment 1 :: Keypress: Left (Q) | Primed With: (255, 215, 0) | Appeared First: (0, 0, 255) | Order: {'right': (255, 215, 0), 'left': (0, 0, 255)} | Time: 300
