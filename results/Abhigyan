@@ -1,0 +1,6 @@
+Experiment 1 :: Keypress: Left (Q) | Primed With: (0, 255, 0) | Appeared First: (128, 0, 128) | Order: {'right': (0, 255, 0), 'left': (128, 0, 128)} | Time: 0
+Experiment 1 :: Keypress: Left (Q) | Primed With: (255, 0, 0) | Appeared First: (128, 0, 128) | Order: {'right': (128, 0, 128), 'left': (255, 0, 0)} | Time: 0
+Experiment 1 :: Keypress: Left (Q) | Primed With: (255, 255, 0) | Appeared First: (150, 75, 0) | Order: {'right': (255, 255, 0), 'left': (150, 75, 0)} | Time: 0
+Experiment 2 :: Keypress: Left (Q) | Primed With: barakat_green | Appeared First: (255, 215, 0) | Order: {'right': 'green', 'left': 'orange'} | Time: 120
+Experiment 2 :: Keypress: Right (P) | Primed With: pool_black | Appeared First: (128, 0, 128) | Order: {'right': 'black', 'left': 'purple'} | Time: 300
+Experiment 2 :: Keypress: Left (Q) | Primed With: pool_black | Appeared First: (128, 0, 128) | Order: {'right': 'black', 'left': 'purple'} | Time: 30

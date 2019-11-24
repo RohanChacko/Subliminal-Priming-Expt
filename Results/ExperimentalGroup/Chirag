@@ -1,0 +1,5 @@
+Experiment 2 :: Keypress: Right (P) | Primed With: mnm_blue | Appeared First: (255, 255, 0) | Order: {'right': 'blue', 'left': 'yellow'} | Time: 0
+Experiment 2 :: Keypress: Right (P) | Primed With: mnm_yellow | Appeared First: (0, 0, 255) | Order: {'right': 'yellow', 'left': 'blue'} | Time: 0
+Experiment 2 :: Keypress: Right (P) | Primed With: mnm_yellow | Appeared First: (0, 0, 255) | Order: {'right': 'yellow', 'left': 'blue'} | Time: 0
+Experiment 2 :: Keypress: Right (P) | Primed With: ahoy_blue | Appeared First: (255, 0, 0) | Order: {'right': 'blue', 'left': 'red'} | Time: 120
+Experiment 2 :: Keypress: Right (P) | Primed With: pool_black | Appeared First: (128, 0, 128) | Order: {'right': 'black', 'left': 'purple'} | Time: 300
