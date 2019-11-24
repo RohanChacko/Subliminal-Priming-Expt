@@ -7,43 +7,8 @@ import time
 import random
 import os
 import sys
-
-
-
-
-WIDTH = 1900
-HEIGHT = 1000
-FPS = 100
-
-# Define Colors
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-ORANGE = (255, 215, 0)
-PURPLE = (128, 0, 128)
-YELLOW = (255, 255, 0)
-
-color = {
-'red' : RED,
-'blue' :BLUE,
-'green' : GREEN,
-'orange' : ORANGE,
-'purple' : PURPLE,
-'black' : BLACK,
-'yellow' : YELLOW,
-}
-UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-LOWERCASE = "abcdefghijklmnopqrstuvwxyz"
-LETTERS = list(UPPERCASE) + list(LOWERCASE)
-
-
-# DELAY
-FIXATION_DELAY = 3
-MASK_DELAY = 0.5
-PRIME_DELAY = 0.055
-TASK_DELAY = 0.002
+import csv
+from config import *
 
 dir_biscuits = './Logos/biscuits'
 im_biscuits = []
@@ -234,7 +199,7 @@ def render(screen, font, category, fix_delay):
         order['left'] = task_color
         order['right'] = prime_color
 
-    appeared_first = color[task_color]
+    appeared_first = task_color
     pygame.display.update()
     # print(task_color, 'printed first')
 
@@ -292,9 +257,51 @@ def main(category, fix_delay) :
 
 
 if __name__ == '__main__' :
-    keypress, primed_with, appeared_first, order = main(sys.argv[1], sys.argv[2])
-    append_string = "Experiment 2 :: Keypress: {} | Primed With: {} | Appeared First: {} | Order: {} | Time: {}\n".format(keypress, primed_with, appeared_first, order, sys.argv[2])
-    with open(sys.argv[4], "a+") as f:
-        f.write(append_string)
-        
 
+    # Create the Control and Experimental Result Directories if they do not exist already
+    if not os.path.exists(CONTROL_PATH):
+        os.makedirs(CONTROL_PATH)
+    if not os.path.exists(EXPERIMENTAL_PATH):
+        os.makedirs(EXPERIMENTAL_PATH)
+
+    file_name = None
+    file_name_csv = None
+    if sys.argv[3] == 'cgroup':
+        file_name = CONTROL_PATH + '/' + sys.argv[4]
+        file_name_csv = file_name + '.csv'
+    else:
+        file_name = EXPERIMENTAL_PATH + '/' + sys.argv[4]
+        file_name_csv = file_name + '.csv'
+
+    keypress, primed_with, appeared_first, order = main(sys.argv[1], sys.argv[2])
+    append_string = "Experiment 2 ::  Keypress: {} | Primed With: {} | Appeared First: {} | Order: {} | Time: {}\n".format(keypress, primed_with, appeared_first, order, sys.argv[2])
+    
+    csv_columns = [
+        "Experiment Number",
+        "Keypress",
+        "Primed With",
+        "Appeared First",
+        "Order",
+        "Time",
+    ]
+    append_dict = [{
+        "Experiment Number" : "2",
+        "Keypress" : keypress,
+        "Primed With" : primed_with,
+        "Appeared First" : appeared_first,
+        "Order" : order,
+        "Time" : sys.argv[2],
+    }]
+
+    with open(file_name, "a+") as f:
+        f.write(append_string)
+
+    try:
+        with open(file_name_csv, 'a+') as csvf:
+            writer = csv.DictWriter(csvf, fieldnames=csv_columns)
+            if os.stat(file_name_csv).st_size == 0:
+                writer.writeheader()
+            for data in append_dict:
+                writer.writerow(data)
+    except IOError:
+        print("I/O Error")

@@ -6,45 +6,8 @@ import time
 import random
 import os
 import sys
-
-
-# def init() :
-
-WIDTH = 1900
-HEIGHT = 1000
-FPS = 100
-
-# Define Colors
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-ORANGE = (255, 215, 0)
-PURPLE = (128,0,128)
-YELLOW = (255, 255, 0)
-PINK = (255,20,147)
-BROWN = (150,75,0)
-
-color = {
-}
-
-pool_color_1 = [RED, ORANGE, YELLOW, GREEN]
-pool_color_1_label = ["RED", "ORANGE", "YELLOW", "GREEN"]
-
-pool_color_2 = [BROWN, PINK, BLUE, PURPLE]
-pool_color_2_label = ["BROWN", "PINK", "BLUE", "PURPLE"]
-
-UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-LOWERCASE = "abcdefghijklmnopqrstuvwxyz"
-LETTERS = list(UPPERCASE) + list(LOWERCASE)
-
-
-# DELAY
-FIXATION_DELAY = 3
-MASK_DELAY = 0.5
-PRIME_DELAY = 0.050
-TASK_DELAY = 0.002
+import csv
+from config import *
 
 def render_mask(screen, font) :
 
@@ -201,8 +164,58 @@ def main(fix_delay) :
 
 
 if __name__ == '__main__' :
+
+    # Create the Control and Experimental Result Directories if they do not exist already
+    if not os.path.exists(CONTROL_PATH):
+        os.makedirs(CONTROL_PATH)
+    if not os.path.exists(EXPERIMENTAL_PATH):
+        os.makedirs(EXPERIMENTAL_PATH)
+
+    print(sys.argv)
+    file_name = None
+    file_name_csv = None
+    if sys.argv[2] == 'cgroup':
+        file_name = CONTROL_PATH + '/' + sys.argv[3]
+        file_name_csv = file_name + '.csv'
+    else:
+        file_name = EXPERIMENTAL_PATH + '/' + sys.argv[3]
+        file_name_csv = file_name + '.csv'
+
     keypress, primed_with, appeared_first, order = main(sys.argv[1])
+    print(appeared_first)
+    print(order)
     append_string = "Experiment 1 :: Keypress: {} | Primed With: {} | Appeared First: {} | Order: {} | Time: {}\n".format(keypress, primed_with, appeared_first, order, sys.argv[1])
-    with open(sys.argv[3], "a+") as f:
+    with open(file_name, "a+") as f:
         f.write(append_string)
+
+    csv_columns = [
+        "Experiment Number",
+        "Keypress",
+        "Primed With",
+        "Appeared First",
+        "Order",
+        "Time",
+    ]
+    append_dict = [{
+        "Experiment Number" : "1",
+        "Keypress" : keypress,
+        "Primed With" : primed_with,
+        "Appeared First" : appeared_first,
+        "Order" : order,
+        "Time" : sys.argv[1],
+    }]
+
+    with open(file_name, "a+") as f:
+        f.write(append_string)
+
+    try:
+        with open(file_name_csv, 'a+') as csvf:
+            writer = csv.DictWriter(csvf, fieldnames=csv_columns)
+
+            if os.stat(file_name_csv).st_size == 0:
+                writer.writeheader()
+            for data in append_dict:
+                writer.writerow(data)
+    except IOError:
+        print("I/O Error")
     
