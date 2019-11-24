@@ -1,5 +1,0 @@
-Experiment 2 :: Keypress: Right (P) | Primed With: hello_red | Appeared First: (0, 0, 255) | Order: {'left': 'blue', 'right': 'red'} | Time: 0
-Experiment 2 :: Keypress: Right (P) | Primed With: pool_black | Appeared First: (128, 0, 128) | Order: {'left': 'purple', 'right': 'black'} | Time: 0
-Experiment 2 :: Keypress: Left (Q) | Primed With: pool_purple | Appeared First: (0, 0, 0) | Order: {'left': 'black', 'right': 'purple'} | Time: 0
-Experiment 2 :: Keypress: Left (Q) | Primed With: barakat_green | Appeared First: (255, 215, 0) | Order: {'left': 'orange', 'right': 'green'} | Time: 120
-Experiment 2 :: Keypress: Right (P) | Primed With: mnm_blue | Appeared First: (255, 255, 0) | Order: {'left': 'yellow', 'right': 'blue'} | Time: 300

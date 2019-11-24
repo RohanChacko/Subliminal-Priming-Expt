@@ -1,0 +1,6 @@
+Experiment Number,Keypress,Primed With,Appeared First,Order,Time
+1,Left (Q),control group,"(128, 0, 128)","{'left': (0, 255, 0), 'right': (128, 0, 128)}",0
+1,Right (P),control group,"(255, 20, 147)","{'left': (0, 255, 0), 'right': (255, 20, 147)}",0
+1,Right (P),control group,"(150, 75, 0)","{'left': (0, 255, 0), 'right': (150, 75, 0)}",0
+1,Right (P),control group,"(128, 0, 128)","{'left': (255, 215, 0), 'right': (128, 0, 128)}",120
+1,Right (P),control group,"(150, 75, 0)","{'right': (255, 0, 0), 'left': (150, 75, 0)}",300

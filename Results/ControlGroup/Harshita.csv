@@ -1,0 +1,6 @@
+Experiment Number,Keypress,Primed With,Appeared First,Order,Time
+2,Right (P),control group,yellow,"{'left': 'yellow', 'right': 'blue'}",0
+2,Right (P),control group,blue,"{'left': 'blue', 'right': 'yellow'}",0
+2,Right (P),control group,blue,"{'left': 'blue', 'right': 'yellow'}",0
+2,Left (Q),control group,orange,"{'left': 'orange', 'right': 'green'}",120
+2,Right (P),control group,green,"{'left': 'green', 'right': 'orange'}",300
