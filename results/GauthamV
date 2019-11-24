@@ -1,0 +1,5 @@
+Experiment 2 :: Keypress: Right (P) | Primed With: rawabi_orange | Appeared First: (0, 255, 0) | Order: {'left': 'green', 'right': 'orange'} | Time: 0
+Experiment 2 :: Keypress: Right (P) | Primed With: pool_black | Appeared First: (128, 0, 128) | Order: {'left': 'purple', 'right': 'black'} | Time: 0
+Experiment 2 :: Keypress: Left (Q) | Primed With: hello_red | Appeared First: (0, 0, 255) | Order: {'left': 'blue', 'right': 'red'} | Time: 0
+Experiment 2 :: Keypress: Right (P) | Primed With: hello_red | Appeared First: (0, 0, 255) | Order: {'left': 'blue', 'right': 'red'} | Time: 120
+Experiment 2 :: Keypress: Right (P) | Primed With: americana_red | Appeared First: (0, 0, 255) | Order: {'left': 'blue', 'right': 'red'} | Time: 300

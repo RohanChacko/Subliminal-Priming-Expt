@@ -1,0 +1,6 @@
+Experiment 2 :: Keypress:  | Primed With: pool_black | Appeared First: (128, 0, 128) | Order: {'left': 'purple', 'right': 'black'} | Time: 0
+Experiment 2 :: Keypress: Right (P) | Primed With: pool_purple | Appeared First: (0, 0, 0) | Order: {'left': 'black', 'right': 'purple'} | Time: 0
+Experiment 2 :: Keypress: Right (P) | Primed With: skittles_red | Appeared First: (0, 255, 0) | Order: {'left': 'green', 'right': 'red'} | Time: 0
+Experiment 2 :: Keypress: Left (Q) | Primed With: mnm_yellow | Appeared First: (0, 0, 255) | Order: {'left': 'blue', 'right': 'yellow'} | Time: 0
+Experiment 2 :: Keypress: Left (Q) | Primed With: ahoy_blue | Appeared First: (255, 0, 0) | Order: {'left': 'red', 'right': 'blue'} | Time: 120
+Experiment 2 :: Keypress: Left (Q) | Primed With: hello_red | Appeared First: (0, 0, 255) | Order: {'left': 'blue', 'right': 'red'} | Time: 300
